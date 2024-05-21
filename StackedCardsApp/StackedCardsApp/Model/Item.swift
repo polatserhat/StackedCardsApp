@@ -21,3 +21,12 @@ var items: [Item] = [
     .init(color: .pink),
 ]
 
+extension [Item] {
+    func zIndex(_ item: Item) -> CGFloat {
+        if let index = firstIndex(where: { $0.id == item.id  }) {
+            return CGFloat(count) - CGFloat(index)
+        }
+        
+        return .zero
+    }
+}
